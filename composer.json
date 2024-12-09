@@ -10,6 +10,11 @@
             "App\\": "App/"
         }
     },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('sharp.json') || copy('sharp.example.json', 'sharp.json');\""
+        ]
+    },
     "license": "MIT",
     "minimum-stability": "stable"
 }
