@@ -1,0 +1,15 @@
+{
+    "name": "yonis-savary/sharp-project",
+    "description": "Plain project to get started with the Sharp framework",
+    "type": "project",
+    "require": {
+        "yonis-savary/sharp": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "stable"
+}
