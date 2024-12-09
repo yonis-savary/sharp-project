@@ -1,5 +1,40 @@
 {
     "applications": [
         "App"
-    ]
+    ],
+
+    "asset-server": {
+        "enabled": true,
+        "cached": true,
+        "max-age": 3600,
+        "node-packages": []
+    },
+
+    "router": {
+        "cached": false,
+        "quick-routing": false
+    },
+
+    "database": {
+        "driver": "mysql",
+        "database": "database",
+        "host": "localhost",
+        "port": 3306,
+        "user": "root",
+        "password": null,
+        "charset": "utf8"
+    },
+
+    "authentication": {
+        "model": "App\\Models\\User",
+        "login-field": "login",
+        "password-field": "password",
+        "salt-field": null,
+        "session-duration": 3600
+    },
+
+    "renderer": {
+        "cached": false,
+        "file_extension": ".php"
+    }
 }
