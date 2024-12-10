@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./App/Vue/*",
+        "./App/React/*",
+        "./App/Angular/*",
+        "./App/Js/*",
+        "./App/Assets/js/*",
+      ]
+    }
+  },
+  "exclude": ["node_modules"]
+}

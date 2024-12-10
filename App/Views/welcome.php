@@ -7,9 +7,10 @@
 </head>
 <style>
 
-    @keyframes slide-in {
-        from { transform: translateY(-1em); opacity: 0; }
-        to { transform: translateY(0%); opacity: 1; }
+    @keyframes slide-in
+    {
+        from { transform: translateY(1em); opacity: 0; }
+        to   { transform: translateY(0%);  opacity: 1; }
     }
 
     body > *
@@ -21,6 +22,11 @@
     {
         margin: 0;
         letter-spacing: .06em;
+    }
+
+    a, a:visited
+    {
+        color: #4242ff
     }
 
     :root
@@ -38,8 +44,33 @@
         background: radial-gradient(#f3f3fb 50%, #00006115) no-repeat;
     }
 
+    html::before, html::after
+    {
+        z-index: 1;
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    html::after
+    {
+        background: linear-gradient(35deg, #9090ff, transparent 90%);
+        clip-path: polygon(100% 50%, 50% 100%, 100% 100%);
+    }
+
+    html::before
+    {
+        background: linear-gradient(-145deg, #9090ff, transparent 90%);
+        clip-path: polygon(50% 0, 0 50%, 0 0);
+    }
+
     body
     {
+        position: relative;
+        z-index: 2;
         width: 100vw;
         height: 80vh;
 

@@ -36,5 +36,15 @@
     "renderer": {
         "cached": false,
         "file_extension": ".php"
+    },
+
+    "vite-build": {
+        "target-application": "App",
+        "public-directory": "Public",
+        "input": ["App/Assets/js/main.js"],
+        "refresh": true,
+        "defaultAliases": {
+            "@": "/App/Assets/js"
+        }
     }
 }

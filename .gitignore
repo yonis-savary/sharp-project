@@ -1,5 +1,15 @@
+# Sharp
 /Storage
-/vendor
+/TestApp
+
+# Config
 sharp.json
 env.json
+
+# Composer
+/vendor
 composer.lock
+
+# Node
+/node_modules
+package-lock.json
