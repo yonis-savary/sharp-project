@@ -23,9 +23,9 @@ const refreshPaths = getSharpApplicationPathList().map(app => [
 .flat()
 .filter( path => fs.existsSync(path.replace(/\*\*$/, "")) );
 
-function sharp()
+function sharp(pluginConfig={})
 {
-    const pluginConfig = resolvePluginConfig();
+    pluginConfig = resolvePluginConfig(pluginConfig);
     return [
         resolveSharpPlugin(pluginConfig),
         ...resolveFullReloadConfig(pluginConfig)
@@ -110,7 +110,7 @@ function resolveSharpPlugin(pluginConfig)
                     fs.writeFileSync(pluginConfig.hotFile, `${viteDevServerUrl}${server.config.base.replace(/\/$/, "")}`);
                     setTimeout(() =>
                     {
-                        server.config.logger.info(`\n  ${colors.blueBright(`${colors.bold("Sharp")} (${sharpVersion()})`)} - Sharp vite plugin (${colors.bold(`v0.1`)})`);
+                        server.config.logger.info(`\n  ${colors.blueBright(`${colors.bold("Sharp")} (${sharpVersion()})`)} - Sharp vite plugin (${colors.bold(`v0.2`)})`);
                         server.config.logger.info("");
                     }, 100);
                 }
@@ -161,10 +161,8 @@ function sharpVersion()
 }
 
 
-function resolvePluginConfig()
+function resolvePluginConfig(config={})
 {
-    let config = resolveSharpBuildConfiguration();
-
     if (typeof config === "undefined")
         config = {};
 
